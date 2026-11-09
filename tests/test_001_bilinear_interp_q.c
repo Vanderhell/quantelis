@@ -1,6 +1,7 @@
 ﻿#include "pc_bilinear_interp_q.h"
 #include <assert.h>
 #include <limits.h>
+#include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
 

@@ -36,7 +36,8 @@ The CMake test option is QUANTELIS_BUILD_TESTS. The library has no mandatory thi
 Read the individual public header before use. It defines widths, representation, valid ranges, rounding, overflow/saturation/wrap behavior, invalid-input handling and whether output is left unchanged on failure. APIs are stateless unless a caller-owned state object is explicitly present.
 
 ## Testing and validation
-19/19 enabled host tests passed.
+19/19 MSVC tests and 20/20 GCC strict-warning tests passed. The GCC build also
+runs the trilinear oracle that is excluded by the MSVC precision guard.
 See docs/TESTING.md for reproducible commands, coverage boundaries and hardware status.
 
 ## Resource status

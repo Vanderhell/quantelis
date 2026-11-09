@@ -1,5 +1,6 @@
 ﻿#include <stdint.h>
 #include <stdio.h>
+#include <stddef.h>
 #include "pc_ratio_round_even_u32.h"
 #include "pc_q_to_i32_round.h"
 static uint32_t s=563;static uint32_t rng(void){s^=s<<13;s^=s>>17;s^=s<<5;return s;}static int map(int32_t x,unsigned f,int32_t*out){uint32_t mag=x<0?(uint32_t)(-(int64_t)x):(uint32_t)x,q;if(!pc_ratio_round_even_u32(mag,UINT32_C(1)<<f,&q))return 0;if(x<0)*out=q==UINT32_C(2147483648)?INT32_MIN:-(int32_t)q;else *out=(int32_t)q;return 1;}static int64_t ref(int32_t x,unsigned f){uint64_t m=x<0?(uint64_t)(-(int64_t)x):(uint64_t)x,d=UINT64_C(1)<<f,q=m/d,r=m%d;if(2*r>d||(2*r==d&&(q&1u)))q++;return x<0?-(int64_t)q:(int64_t)q;}

@@ -1,6 +1,7 @@
 ﻿#include "pc_decay_factor_from_tau_q.h"
 #include <assert.h>
 #include <stdint.h>
+#include <stddef.h>
 
 int main(void)
 {

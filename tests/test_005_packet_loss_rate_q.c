@@ -1,6 +1,7 @@
 ﻿#include "pc_packet_loss_rate_q.h"
 #include "pc_q_div_round_even.h"
 #include <stdint.h>
+#include <stddef.h>
 #include <stdio.h>
 
 /* Independent shift/divide reference; does not multiply lost by 2^fractional_bits. */
