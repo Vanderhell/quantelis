@@ -1,5 +1,5 @@
-#ifndef PRIMITIVECORE_PC_TIME_TO_TARGET_Q_H
-#define PRIMITIVECORE_PC_TIME_TO_TARGET_Q_H
+#ifndef PC_PC_TIME_TO_TARGET_Q_H
+#define PC_PC_TIME_TO_TARGET_Q_H
 #include <stdbool.h>
 #include <stdint.h>
 /* Return ceil time to target in microseconds for scalar Q16.16 position and

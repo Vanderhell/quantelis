@@ -1,7 +1,7 @@
-﻿#include "pc_rpm_to_radps_q.h"
+#include "pc_rpm_to_radps_q.h"
 #include <limits.h>
 
-bool rm_rpm_to_radps_q(int32_t rpm_q16, int32_t *radps_q16)
+bool pc_rpm_to_radps_q(int32_t rpm_q16, int32_t *radps_q16)
 {
     const uint64_t pi_q30 = UINT64_C(3373259427);
     const uint64_t denominator = UINT64_C(30) << 30;

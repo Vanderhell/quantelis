@@ -1,5 +1,5 @@
-#ifndef PRIMITIVECORE_PC_PACKET_LOSS_RATE_Q_H
-#define PRIMITIVECORE_PC_PACKET_LOSS_RATE_Q_H
+#ifndef PC_PC_PACKET_LOSS_RATE_Q_H
+#define PC_PC_PACKET_LOSS_RATE_Q_H
 #include <stdbool.h>
 #include <stdint.h>
 /* Compute round-nearest-even((lost_packets * 2^fractional_bits) / sent_packets).

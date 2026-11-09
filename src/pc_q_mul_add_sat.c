@@ -1,7 +1,7 @@
-﻿#include "pc_q_mul_add_sat.h"
+#include "pc_q_mul_add_sat.h"
 #include <stddef.h>
 
-bool rm_q_mul_add_sat(int32_t a, int32_t b, int32_t c,
+bool pc_q_mul_add_sat(int32_t a, int32_t b, int32_t c,
                       unsigned fractional_bits, int32_t *result)
 {
     int64_t product, rounded, accumulated;

@@ -1,6 +1,6 @@
-﻿#include "pc_voltage_divider_q.h"
+#include "pc_voltage_divider_q.h"
 #include <stddef.h>
-bool rm_voltage_divider_q(uint32_t input_q16, uint32_t resistance_top,
+bool pc_voltage_divider_q(uint32_t input_q16, uint32_t resistance_top,
                           uint32_t resistance_bottom, uint32_t *output_q16)
 {
     if (output_q16 == NULL) return false;

@@ -6,8 +6,7 @@ transforms on embedded targets.
 
 ## Scope
 
-The first extraction contains 27 public fixed-point functions from the
-PrimitiveCore family. The preserved `pc_` API uses the representation and
+The package contains 27 public fixed-point functions. The `pc_` API uses the representation and
 rounding contracts documented in each header. No heap or operating-system
 service is required.
 
@@ -28,7 +27,7 @@ footprint measurements are pending; no hardware result is claimed.
 
 Quantelis combines *quantus* (quantity) with *telos* (purpose/scale), reflecting
 fixed-point values used for controlled quantitative transforms. It originates
-from PrimitiveCore's `fixed_point/q_format_and_numeric` family.
+Its technical scope is fixed-point formats and numeric transforms.
 
 ## License
 

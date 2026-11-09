@@ -1,7 +1,7 @@
-﻿#include "pc_bilinear_interp_q.h"
+#include "pc_bilinear_interp_q.h"
 #include <stddef.h>
 
-bool rm_bilinear_interp_q(int16_t v00_q15, int16_t v10_q15,
+bool pc_bilinear_interp_q(int16_t v00_q15, int16_t v10_q15,
                           int16_t v01_q15, int16_t v11_q15,
                           uint32_t fx_q0_16, uint32_t fy_q0_16,
                           int16_t *value_q15)

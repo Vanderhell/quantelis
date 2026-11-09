@@ -1,7 +1,7 @@
-﻿#include "pc_trilinear_interp_q.h"
+#include "pc_trilinear_interp_q.h"
 #include <stddef.h>
 
-bool rm_trilinear_interp_q(
+bool pc_trilinear_interp_q(
     int16_t v000_q15, int16_t v100_q15, int16_t v010_q15, int16_t v110_q15,
     int16_t v001_q15, int16_t v101_q15, int16_t v011_q15, int16_t v111_q15,
     uint32_t fx_q0_16, uint32_t fy_q0_16, uint32_t fz_q0_16,

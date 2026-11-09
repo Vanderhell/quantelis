@@ -1,6 +1,6 @@
-﻿#include "pc_table_inverse_index_q.h"
+#include "pc_table_inverse_index_q.h"
 
-bool rm_table_inverse_index_q(const int32_t *values, size_t count,
+bool pc_table_inverse_index_q(const int32_t *values, size_t count,
                               int32_t sample, int32_t *index_q16_16)
 {
     size_t lo, hi;

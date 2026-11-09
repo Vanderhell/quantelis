@@ -1,5 +1,5 @@
-#ifndef PRIMITIVECORE_PC_ROLL_PITCH_FROM_ACCEL_Q_H
-#define PRIMITIVECORE_PC_ROLL_PITCH_FROM_ACCEL_Q_H
+#ifndef PC_PC_ROLL_PITCH_FROM_ACCEL_Q_H
+#define PC_PC_ROLL_PITCH_FROM_ACCEL_Q_H
 
 #include <stdbool.h>
 #include <stdint.h>

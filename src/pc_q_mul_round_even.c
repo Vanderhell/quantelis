@@ -1,7 +1,7 @@
-﻿#include "pc_q_mul_round_even.h"
+#include "pc_q_mul_round_even.h"
 #include <stddef.h>
 
-bool rm_q_mul_round_even(int32_t a, int32_t b, unsigned fractional_bits,
+bool pc_q_mul_round_even(int32_t a, int32_t b, unsigned fractional_bits,
                          int32_t *product)
 {
     int64_t wide_product, result;

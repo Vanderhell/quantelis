@@ -1,7 +1,7 @@
-﻿#include "pc_one_pole_smoother_q.h"
+#include "pc_one_pole_smoother_q.h"
 #include <stddef.h>
 #include <stdint.h>
-bool rm_one_pole_smoother_q(int32_t input, uint32_t alpha_q16, int32_t *state)
+bool pc_one_pole_smoother_q(int32_t input, uint32_t alpha_q16, int32_t *state)
 {
     int64_t delta, product, adjustment, next;
     uint64_t magnitude, quotient, remainder;

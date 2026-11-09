@@ -1,7 +1,7 @@
-﻿#include "pc_q_to_i32_round.h"
+#include "pc_q_to_i32_round.h"
 #include <stddef.h>
 
-bool rm_q_to_i32_round(int32_t raw, unsigned fractional_bits,
+bool pc_q_to_i32_round(int32_t raw, unsigned fractional_bits,
                        int32_t *integer)
 {
     uint64_t magnitude, quotient, remainder, denominator;

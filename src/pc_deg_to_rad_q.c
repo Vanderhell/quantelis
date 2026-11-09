@@ -1,7 +1,7 @@
-﻿#include "pc_deg_to_rad_q.h"
+#include "pc_deg_to_rad_q.h"
 #include <limits.h>
 
-bool rm_deg_to_rad_q(int32_t degrees_q16, int32_t *radians_q16)
+bool pc_deg_to_rad_q(int32_t degrees_q16, int32_t *radians_q16)
 {
     const uint64_t pi_q30 = UINT64_C(3373259427);
     const uint64_t denominator = UINT64_C(180) << 30;

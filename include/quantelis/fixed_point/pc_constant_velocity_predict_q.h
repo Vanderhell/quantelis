@@ -1,5 +1,5 @@
-#ifndef PRIMITIVECORE_PC_CONSTANT_VELOCITY_PREDICT_Q_H
-#define PRIMITIVECORE_PC_CONSTANT_VELOCITY_PREDICT_Q_H
+#ifndef PC_PC_CONSTANT_VELOCITY_PREDICT_Q_H
+#define PC_PC_CONSTANT_VELOCITY_PREDICT_Q_H
 #include <stdbool.h>
 #include <stdint.h>
 /* Predict scalar Q16.16 position after dt_us at constant velocity in

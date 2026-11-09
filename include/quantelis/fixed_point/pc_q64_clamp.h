@@ -1,5 +1,5 @@
-#ifndef PRIMITIVECORE_PC_Q64_CLAMP_H
-#define PRIMITIVECORE_PC_Q64_CLAMP_H
+#ifndef PC_PC_Q64_CLAMP_H
+#define PC_PC_Q64_CLAMP_H
 #include <stdbool.h>
 #include <stdint.h>
 /* Clamp a same-scale signed Q value to inclusive [lower, upper]. Invalid
