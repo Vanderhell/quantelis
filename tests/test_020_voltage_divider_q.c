@@ -1,4 +1,6 @@
 ﻿#include <assert.h>
+#undef assert
+#define assert(condition) do { if (!(condition)) return __LINE__; } while (0)
 #include <stdint.h>
 #include "pc_voltage_divider_q.h"
 int main(void){uint32_t q=77;

@@ -1,5 +1,7 @@
 ﻿#include "pc_table_inverse_index_q.h"
 #include <assert.h>
+#undef assert
+#define assert(condition) do { if (!(condition)) return __LINE__; } while (0)
 #include <limits.h>
 #include <stdint.h>
 #include <stdio.h>

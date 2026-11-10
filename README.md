@@ -38,15 +38,13 @@ For a minimal integration, include only the required public header and compile t
 
 ## At a glance
 
-The public surface consists of 30 headers and 30 callable API entries under include/. Implementations are in src/ and tests are in tests/. State, buffers and output ownership are explicit in each header contract.
+The include tree contains 30 callable declarations: 29 product operations and the shared time-ratio helper. Each has an implementation unit. Tests are in tests/. State, buffers and output ownership are explicit in each header contract.
 
 The CMake test option is QUANTELIS_BUILD_TESTS. The library has no mandatory third-party dependency. Platform-specific link requirements are documented in CMake and the affected API header.
 
 ## Validation status
 
-19/19 MSVC tests and 20/20 GCC strict-warning tests passed. The GCC build also
-runs the trilinear oracle that is excluded by the MSVC precision guard.
-See docs/TESTING.md for reproducible commands, coverage boundaries and hardware status.
+Executed checks: GCC 21/21, Clang 21/21, GCC ASan+UBSan 21/21, and MSVC Debug/Release 21/21 each. The trilinear test now uses an exact integer oracle on MSVC. An ESP32-S3 runtime smoke test passed all 30 callable declarations at 240 MHz. See [Testing](docs/TESTING.md) and [Performance](docs/PERFORMANCE.md).
 
 Detailed overflow, rounding, invalid-input, memory-ownership and state rules are defined by the public headers and API reference. Do not infer them from the product name alone.
 

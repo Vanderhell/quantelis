@@ -1,4 +1,6 @@
 ﻿#include <assert.h>
+#undef assert
+#define assert(condition) do { if (!(condition)) return __LINE__; } while (0)
 #include <stdint.h>
 #include <limits.h>
 #include "pc_deg_to_rad_q.h"

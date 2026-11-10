@@ -1,5 +1,7 @@
 ﻿#include "pc_decay_factor_from_tau_q.h"
 #include <assert.h>
+#undef assert
+#define assert(condition) do { if (!(condition)) return __LINE__; } while (0)
 #include <stdint.h>
 #include <stddef.h>
 

@@ -1,14 +1,11 @@
 ﻿#include "pc_trilinear_interp_q.h"
 #include <assert.h>
-#include <float.h>
+#undef assert
+#define assert(condition) do { if (!(condition)) return __LINE__; } while (0)
 #include <limits.h>
 #include <stdint.h>
 #include <stddef.h>
 #include <stdio.h>
-
-#if LDBL_MANT_DIG < 64
-#error "The independent long-double oracle requires at least 64 significand bits."
-#endif
 
 static uint32_t rng = 0x865C1A4u;
 static uint32_t next_u32(void)
@@ -26,19 +23,23 @@ static int16_t oracle(const int16_t v[8], uint32_t fx, uint32_t fy, uint32_t fz)
     uint64_t w[8];
     uint64_t x0 = s - fx, y0 = s - fy, z0 = s - fz;
     int64_t weighted;
-    long double exact, frac;
-    int64_t q;
+    int64_t q, remainder;
     w[0] = x0 * y0 * z0; w[1] = (uint64_t)fx * y0 * z0;
     w[2] = x0 * (uint64_t)fy * z0; w[3] = (uint64_t)fx * fy * z0;
     w[4] = x0 * y0 * (uint64_t)fz; w[5] = (uint64_t)fx * y0 * fz;
     w[6] = x0 * (uint64_t)fy * fz; w[7] = (uint64_t)fx * fy * fz;
     weighted = 0;
     for (size_t i = 0u; i < 8u; ++i) weighted += (int64_t)v[i] * (int64_t)w[i];
-    exact = (long double)weighted / 281474976710656.0L;
-    q = (int64_t)exact;
-    frac = exact - (long double)q;
-    if (frac > 0.5L || (frac == 0.5L && q % 2 != 0)) ++q;
-    else if (frac < -0.5L || (frac == -0.5L && q % 2 != 0)) --q;
+    /* Independent floor-division reference: make the remainder nonnegative,
+       then choose the nearest integer with ties going to an even result. */
+    q = weighted / (int64_t)UINT64_C(281474976710656);
+    remainder = weighted % (int64_t)UINT64_C(281474976710656);
+    if (remainder < 0) {
+        --q;
+        remainder += (int64_t)UINT64_C(281474976710656);
+    }
+    if (remainder > (int64_t)UINT64_C(140737488355328) ||
+        (remainder == (int64_t)UINT64_C(140737488355328) && q % 2 != 0)) ++q;
     return (int16_t)q;
 }
 static int16_t interp1d(int16_t a, int16_t b, uint32_t n)

@@ -1,5 +1,7 @@
 ﻿#include "pc_bilinear_interp_q.h"
 #include <assert.h>
+#undef assert
+#define assert(condition) do { if (!(condition)) return __LINE__; } while (0)
 #include <limits.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -104,10 +106,10 @@ int main(void)
         assert(!pc_bilinear_interp_q(0, 1, 2, 3, 0u, 65537u, &out) && out == 123);
         assert(!pc_bilinear_interp_q(0, 1, 2, 3, 0u, 0u, NULL));
     }
-    for (int16_t x = 0; x <= 100; ++x) for (int16_t y = 0; y <= 100; ++y) {
+    for (int16_t grid_x = 0; grid_x <= 100; ++grid_x) for (int16_t grid_y = 0; grid_y <= 100; ++grid_y) {
         int16_t out;
-        uint32_t fx = (uint32_t)x * 65536u / 100u;
-        uint32_t fy = (uint32_t)y * 65536u / 100u;
+        uint32_t fx = (uint32_t)grid_x * 65536u / 100u;
+        uint32_t fy = (uint32_t)grid_y * 65536u / 100u;
         assert(pc_bilinear_interp_q(0, 100, 200, 300, fx, fy, &out));
         assert(out == oracle(0, 100, 200, 300, fx, fy));
     }
