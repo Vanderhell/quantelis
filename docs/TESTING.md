@@ -13,7 +13,7 @@ The suite contains 21 C test programs. It directly exercises all 30 callable dec
 | MSVC 19.42, Windows, Debug | PASS 21/21 | Exact integer trilinear reference oracle |
 | MSVC 19.42, Windows, Release | PASS 21/21 | Exact integer trilinear reference oracle |
 | ESP32-S3 smoke run, v0.2 at 240 MHz | PASS 30/30 | Captured `QUANTELIS_ALL30_PASS passed=30 failed_index=0`; this is one known-value check per callable declaration, not the host differential suite |
-| GitHub Actions for these changes | NOT RUN | Changes were not published; the connected GitHub write action was blocked by its approval gate |
+| GitHub Actions for audit commit `636bde0` | PASS | [Run 42902910872](https://github.com/Vanderhell/quantelis/actions/runs/42902910872): GCC/Clang Debug+Release, GCC ASan/UBSan, MSVC Debug+Release |
 
 The Clang Release build also serves as a strict portability check; it identified missing final newlines that were corrected. The trilinear oracle uses floor division and a nonnegative remainder with exact tie-to-even handling, so it does not depend on extended floating-point precision. No confirmed production algorithm defect was found in this validation pass. This is not a formal proof for all inputs.
 
